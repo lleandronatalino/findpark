@@ -1,0 +1,15 @@
+Seja bem vindo ao sistema Find-Park
+
+
+
+Requisitos.:
+
+	1 - Vertrigo (Se não utilizar o 'vertrigo', terá que conigurar o arquivo database.php)
+	2 - Github - Instalado na maquina
+
+Instalação.:
+
+	1 - Utilize o Tutorial do github para baixar o projeto.
+	2 - Depois de finalizar o projeto, abra o localhost/findpark
+	3 - Execute o Script 'BD-FindPark' no banco de dados (Ele irá criar as tabelas no Banco)
+	4 - Pronto, sistema rodando... Boa Sorte!

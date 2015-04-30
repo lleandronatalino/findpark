@@ -1,0 +1,23 @@
+[
+    {
+    	"id": 1,
+        "Latitude": -19.921322,
+        "Longitude": -43.94376980000001,
+        "Imagem": "/FindPark/content/img/estacionamentos/estac_1.png",
+        "Vagas": 4
+    },
+    {
+    	"id": 2,
+        "Latitude": -19.920716641248756,
+        "Longitude": -43.94148233967286,
+        "Imagem": "/FindPark/content/img/estacionamentos/estac_2.png",
+        "Vagas": 0
+    },
+    {
+    	"id": 3,
+        "Latitude": -19.9200307321873,
+        "Longitude": -43.93920782642823,
+        "Imagem": "/FindPark/content/img/estacionamentos/estac_3.png",
+        "Vagas": 1
+    }
+]
