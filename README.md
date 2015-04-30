@@ -4,7 +4,7 @@ O objetivo do projeto é facilitar a busca dos usuários por estacionamentos, mo
 
 # Diferencial.:
 
-1 - Facilidade em encontrar estacionamentos na região
-2 - Objetividade nas informações.
-3 - Mostrar a quantidade de vagas disponiveis no estacionamento.
-4 - Reservar de vagas pelo sistema.
+*1 - Facilidade em encontrar estacionamentos na região
+*2 - Objetividade nas informações.
+*3 - Mostrar a quantidade de vagas disponiveis no estacionamento.
+*4 - Reservar de vagas pelo sistema.
