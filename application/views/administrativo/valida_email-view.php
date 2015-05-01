@@ -9,19 +9,21 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container"  id="body">
 
         <div class="row">
             <div class="col-md-12 text-center">
                 <h1>Validação de E-mail<hr></h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="container-error">
             <strong> 
                 <!-- Validação de ERROS -->
                 <?php 
-                $div = "<div class='alert alert-danger' role='alert'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> <span class='sr-only'>Error:</span>";
+                $div = "<div class='alert alert-danger' role='alert'> <span class='glyphicon glyphicon-exclamation-sign' 
+                aria-hidden='true'></span> <span class='sr-only'>Error:</span>";
                 $_div = "</div>";
+                
                 echo validation_errors($div,$_div);
 
                 if(isset($userInvalid))
@@ -42,7 +44,8 @@
             </div>
             <div class="col-md-12">
                 <p>
-                    Caso você não tenha recebido um e-mail com o código, <a href="<?php echo base_url('estacionamento/reenviar_email') ?>">clique aqui</a>.
+                    Caso você não tenha recebido um e-mail com o código, 
+                    <a data-toggle="confirmation-popout" class="btn btn-link" href="">Clique aqui</a>.
                 </p>
             </div>
         </div>
@@ -52,7 +55,7 @@
                 <span class="col-md-1 control-label">Codigo<i class="text-red">*</i></span>
                 <div class="col-md-3 ">
                     <input  maxlength="6" type="text" name="txtCodigoEmail" class="form-control not-border-radius" placeholder="Informe seu código aqui"
-                    data-error="Informe o codigo de validacao" required />
+                    data-error="Informe o codigo de validação" required />
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="col-md-1">
@@ -64,7 +67,49 @@
 
     <!-- Carregamento do FOOTER -->
     <script type="text/javascript" src="<?php echo base_url('content/js/jquery-1.11.2.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('content/js/jquery.blockUI.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('content/js/validator.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('content/js/bootstrap.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('content/js/bootstrap.tooltip.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('content/js/bootstrap.confirmation.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('content/js/custom.js') ?>"></script>
+    
+    <script type="text/javascript">
+        $(document).ready( function(){
 
+            $('[data-toggle="confirmation-popout"]').confirmation({
+                title: 'Deseja realmente reenviar o e-mail?',
+                placement: 'top',
+                trigger: 'click',
+                popout: true,
+                btnCancelClass: 'btn btn-danger',
+                btnOkClass: 'btn btn-success',
+                onConfirm: function(){
+                    var _url = "/findpark/estacionamento/reenviar_email";
+
+                    $.ajax({
+                        contentType: false,
+                        processData: false,
+                        data : '',
+                        url : _url,
+                        beforeSend: function(){
+                           blockUI("#body");
+                        },
+                        success: function(data){
+                            $('#container-error').html('');
+                            $('#container-error').append('<div class="alert alert-success" role="alert">E-mail <b>reenviado</b> com sucesso!</div>');
+                            unblockUI("#body");
+                        },
+                        error: function (request, status, error){
+                            $('#container-error').html('');
+                            $('#container-error').append('<div class="alert alert-danger" role="alert"><b>Ocorreu alguma inconsistência no envio de e-mail, Tente novamente!</b></div>');
+                            unblockUI("#body");
+                        }
+                    });
+                    $('[data-toggle="confirmation-popout"]').confirmation('toggle');
+                }
+            });
+});
+</script>
 </body>
 </html>

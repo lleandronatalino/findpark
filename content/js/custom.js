@@ -8,8 +8,24 @@ $("#menu-toggle").click(function (e) {
     $("#wrapper").toggleClass("active");
 });
 
+function blockUI(elemento){
+   $(elemento).block({
+        message: "<img src='/findpark/content/img/preloader.gif'/> Processando...",
+        css: { border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', 
+        '-moz-border-radius': '10px', border: '1px solid black', opacity: .5, color: '#fff'}
+    });
+}
+
+function unblockUI(elemento){
+    $(elemento).unblock();
+}
+
+function oi(){
+    alert('sdsad');
+}
+
 $(function(){
-    $(".dropdown").hover(            
+    $(".dropdown").hover(
         function() {
             $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
             $(this).toggleClass('open');

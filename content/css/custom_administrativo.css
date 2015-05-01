@@ -1,67 +1,88 @@
-body {  margin-bottom: 50px; font-family: Conv_ProximaNova-Light, Arial, Tahoma; font-weight: 500; font-size: 15px; background: #FCFCFC; }
-html { position: relative; min-height: 100%;  }
+body{font-family:'Open Sans',sans-serif}
 
-.row{ margin-left:0px; margin-right:0px; }
+/*h2{ color:red; }*/
+h4{ padding-top:10px; }
+p{ font-size:16px;line-height:25px;padding-top:20px; }
 
-#wrapper { padding-left: 100px; transition: all .4s ease 0s; height: 100% }
+/* Selector ID*/
+#wrapper{width:100%;background:#202020}
+#page-wrapper{padding:15px; min-height:600px;background:#FCFCFC}
+#page-inner{width:100%; margin:70px 20px 10px 0;background-color:#fff!important;padding:10px;min-height:1200px}
 
-#sidebar-wrapper { margin-left: -150px; left: 70px; width: 180px; background:#06192D; position: fixed; height: 100%; z-index: 10000; transition: all .4s ease 0s; }
+/* Select Class*/
+.square-btn-adjust{border:0 solid transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+.text-center{text-align:center}
+.no-boder{border:1px solid #f3f3f3}
+.panel-back{background-color:#F8F8F8}
+.noti-box{min-height:100px;padding:20px}
+.noti-box .icon-box{display:block;float:left;margin:0 15px 10px 0;width:70px;height:70px;line-height:75px;vertical-align:middle;text-align:center;font-size:40px}
+.text-box p{margin:0 0 3px}
+.main-text{font-size:25px;font-weight:600}
+.set-icon{-webkit-border-radius:50px;-moz-border-radius:50px;border-radius:50px}
+.bg-color-green{background-color:#00CE6F;color:#fff}
+.bg-color-blue{background-color:#A95DF0;color:#fff}
+.bg-color-red{background-color:#DB0630;color:#fff}
+.bg-color-brown{background-color:#B94A00;color:#fff}
+.icon-box-right{display:block;float:right;margin:0 15px 10px 0;width:70px;height:70px;line-height:75px;vertical-align:middle;text-align:center;font-size:40px}
+.main-temp-back{background:#8702A8;color:#FFF;font-size:16px;font-weight:300;text-align:center}
+.main-temp-back .text-temp{font-size:40px}
+.back-dash{padding:20px;font-size:20px;font-weight:500;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background-color:#2EA7EB;color:#fff}
+.back-dash p{padding-top:16px;font-size:13px;color:#fff;line-height:25px;text-align:justify}
+.back-footer-green{background-color:#009B50;border-top:0 solid #fff}
+.back-footer-red{background-color:#AF0000;border-top:0 solid #fff}
+.color-bottom-txt{color:#000;font-size:16px;line-height:30px}
+.chat-panel .panel-body{height:450px;overflow-y:scroll}
+.chat-box{margin:0;padding:0;list-style:none}
+.chat-box li{margin-bottom:15px;padding-bottom:5px;border-bottom:1px dotted gray}
+.chat-box li.left .chat-body{margin-left:90px}
+.chat-box li .chat-body p{margin:0;color:#8d8888}
+.chat-img>img{margin-left:20px}
+.user-image{margin:25px auto;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;max-height:170px;max-width:170px}
+.navbar-cls-top .navbar-brand{color:#fff;background:#0B2542;width:235px;text-align:center;height:60px;font-size:30px;font-weight:700;}
+.active-menu{background-color:#1CA01C!important}
+.arrow{float:right}
+.fa.arrow:before{content:"\f104"}
+.active > a > .fa.arrow:before{content:"\f107"}
+.nav-second-level li,.nav-third-level li{border-bottom:none!important}
+.nav-second-level li a{padding-left:37px}
+.nav-third-level li a{padding-left:55px}
+.sidebar-collapse,.sidebar-collapse .nav{background:none}
+.sidebar-collapse .nav{padding:0}
+.sidebar-collapse .nav > li > a{color:#fff;background:#202020;text-shadow:none}
+.sidebar-collapse > .nav > li > a{padding:15px 10px}
+.sidebar-collapse > .nav > li{border-bottom:1px solid rgba(107,108,109,0.19)}
+.sidebar-collapse .nav > li > a:hover,.sidebar-collapse .nav > li > a:focus{background-color: rgba(225, 231, 225, 0.19); outline:0}
+.nav-second-level > li > a:before,.nav-third-level > li > a:before{content:"";display:block;position:absolute;left:20px;width:15px;height:1px;background:#0B2542;top:20px}
+.nav-second-level > li > a:after,.nav-third-level > li > a:after{content:"";display:block;position:absolute;left:20px;width:1px;height:100%;background:#0B2542;top:0;z-index:10}
+.nav-second-level > li:last-child > a:after,.nav-third-level > li:last-child > a:after{height:50%}
+.nav-third-level > li > a:after,.nav-third-level > li > a:before{left:40px}
+.navbar-side{border:none;background-color:#202020}
+.navbar-cls-top{background:#0B2542;border-bottom:none}
+.navbar-cls-top .navbar-brand:hover{background:#0B2542;color:#fff}
+.navbar-default{border:0 solid #000}
+.navbar-header{background:#0B2542}
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#1CA01C}
+.navbar-default .navbar-toggle{border-color:#fff}
+.navbar-default .navbar-toggle .icon-bar{background-color:#FFF}
+.nav > li > a > i{margin-right:10px}
+.btn-circle{ width:50px;height:50px; padding:6px 0;-webkit-border-radius:25px; -moz-border-radius:25px; 
+            border-radius:25px;text-align:center;font-size:12px;line-height:1.428571429}
 
-#page-content-wrapper { padding-left: 0; margin-left: 0; width: 100%; height: auto; }
-#wrapper.active { padding-left: 180px; }
-#wrapper.active #sidebar-wrapper { left: 150px; }
-#main_icon{ float:right;padding-right: 45px;padding-top:20px}
-#page-content-wrapper { width: 100%; }
-
-#sidebar_menu li a,.sidebar-nav li a { color:#fff;display:block;float:left;text-decoration:none;width:180px;background:#06192D;
-   border-bottom:1px solid ;
-  -webkit-transition:background .5s;-moz-transition:background .5s;
-  -o-transition:background .5s;-ms-transition:background .5s;transition:background .5s }
-
-.sidebar-nav { display: block; float: left; width: 180px; list-style: none; margin: 0; padding: 0; }
-.sidebar_name{padding-top:25px;color:#fff;opacity:.7}
-.sidebar-nav li{line-height:40px;text-indent:20px}
-.sidebar-nav li a{color:#fff;display:block;text-decoration:none}
-.sidebar-nav li a:hover{color:#fff;background:rgba(255,255,255,0.2);text-decoration:none}
-.sidebar-nav li a:active,.sidebar-nav li a:focus{text-decoration:none}
-.sidebar-nav > .sidebar-brand{height:65px;line-height:60px;font-size:18px}
-.sidebar-nav > .sidebar-brand a{color:#999}
-.sidebar-nav > .sidebar-brand a:hover{color:#fff;background:none}
-.sub_icon{float:right;padding-right:50px;padding-top:10px}
-.content-header{height:65px;line-height:65px}
-.content-header h1{margin:0;margin-left:20px;line-height:65px;display:inline-block}
-
-::selection{ background:#1CA01C; color: #fff; }
-#footer { margin-top: 100px; }
-
-hr { margin-bottom:0px; margin-top: 5px; }
-.text-white > a { color: #FFF; }
-a:hover { color: black; }
-
-.border{ border: 1px solid #ccc;}
+/*Style Customizer*/
+.border {border: 1px solid red;}
+.login { color:#fff; padding:20px 20px 5px; font-size:16px }
+.logout { width: 100px; height: 100%; padding:20px 20px 20px 20px; background: #DD0606 !important; color: white;}
+.logout:hover {  background: #A61919 !important; color: white !important; }
+.margin-bottom-0 { margin-bottom: 0; }
 .not-border-radius { border-radius: 0px; -webkit-border-radius:0px; -moz-border-radius:0px;  }
-.not-padding-bottom { padding-bottom: 0px !important; }
-.padding-left-0 { padding-left: 10px; }
-.padding-top-0 { padding-top: 20px; }
-.padding-top-1 { padding-top: 40px; }
-.padding-top-2 { padding-top: 50px; }
-.padding-top-3 { padding-top: 80px; }
-.padding-top-4 { padding-top: 100px; }
-.text-green { color: #1CA01C; }
 
-.text-red { color: #a94442; }
+@media(min-width:768px) {
+    #page-wrapper{margin:0 0 0 235px;padding:15px 30px;min-height:1200px}
+    .navbar-side{z-index:1;position:absolute;width:235px; padding-top: 50px;}
+    .navbar{border-radius:0}
+}
 
-/* Applying css redes sociais */
-.icon-facebook {background:#3B5997; padding:10px 0 5px 0;}
-.icon-twitter {background:#00ACEE; padding:10px 0 5px 0;}
-.icon-google-plus {background:#C93313; padding:10px 0 5px 0;} 
-.icon-linkedin {background:#0274B3; padding:10px 0 5px 0;} 
-
-
-@media (max-width:767px) {
-  #sidebar_menu li a,.sidebar-nav li a { width:150px; }
-  #wrapper{padding-left:100px;transition:all .4s ease 0}
-  #sidebar-wrapper{left:70px}
-  #wrapper.active{padding-left:150px}
-  #wrapper.active #sidebar-wrapper{left:150px;width:150px;transition:all .4s ease 0}
+@media(max-width: 768px){
+    #main-menu > li:first-child { padding-top: 100px; }
+    #page-inner { margin-top: 120px;}
 }
